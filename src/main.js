@@ -5,13 +5,16 @@ import App from './App'
 import router from './router'
 import '@/assets/css/border.css'
 import '@/assets/css/reset.css'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+Vue.use(VueAxios,axios);
 
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router,
+  router, 
   components: { App },
   template: '<App/>'
 })
