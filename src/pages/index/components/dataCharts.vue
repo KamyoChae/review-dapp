@@ -42,21 +42,14 @@
 
         return {
             chartData: {
-            columns: ['日期', 'eos', 'tron', 'eth'],
-            rows: [
-                { '日期': '1/1', 'eos': 1393, 'tron': 1093, 'eth': 3422 },
-                { '日期': '1/2', 'eos': 3530, 'tron': 2345, 'eth': 2346 },
-                { '日期': '1/3', 'eos': 2923, 'tron': 3438, 'eth': 2345 },
-                { '日期': '1/4', 'eos': 1723, 'tron': 8432, 'eth': 1245 },
-                { '日期': '1/5', 'eos': 3792, 'tron': 3492, 'eth': 5243 },
-                { '日期': '1/6', 'eos': 4593, 'tron': 4293, 'eth': 2312 }
-            ]
+                columns: ['日期', 'eos', 'tron', 'eth'],
+                rows: []
             },
             results:[],
         }
     },
     methods:{
-        renderCharData(arrList){
+        renderCharData(arrList, type){
             arrList = arrList.reverse()
             let that = this
             let lastDate = null
@@ -84,26 +77,24 @@
                 }
                 // 猜测是接口时间戳出了问题，遍历时间戳转换成日期全部都是第一天。
                 // 所以下面采用另外一种方式解决
-                
-                    console.log(newDate)
+                 
                 
                 if(lastDate !== newDate){
                     
-                    lastDate = newDate // 表示到了第二天
-                    console.log(index + "if")
+                    lastDate = newDate // 表示到了第二天 
                     // if(JSON.stringify(obj) !== '{}'){
                         // console.log(arr)
                         arr.push(obj)
                         obj = {}
                         obj["日期"] = newDate
-                        obj[element.chain] = element.total_user
+                        obj[element.chain] = element[type]
                     // }
                     // 创建新的对象
                 }else{
                     // 表示是同一天
                     // console.log("同一天")
                     obj["日期"] = newDate
-                    obj[element.chain] = element.total_user
+                    obj[element.chain] = element[type]
                     if(index === myarr.length-1){
                         arr.push(obj)
                         obj = {}
@@ -113,23 +104,36 @@
 
                 // 将创建好的对象放到数组里面
 
-            });
-            console.log(arr)
+            }); 
+            this.chartData.rows=arr  
         },
         transformDate(timeStamp){
             let date = new Date(timeStamp)
             let month = date.getMonth()+1
             let day = date.getDate()
             return month + '-' + day
+        },
+
+        getUser(){
+            // 日活
+            this.renderCharData(this.results, "total_user")
+        },
+        getTx(){
+            // 交易笔数
+            this.renderCharData(this.results, "total_tx")
+        },
+        getVolume(){
+            // 交易额
+            this.renderCharData(this.results, "total_volume_CNY")
+            
         }
     },
     created() { 
 
         this.axios.get('/api/dapp/total/stats/')
             .then(res => { 
-                this.results = res.data.results
-                console.log(res)
-                this.renderCharData(this.results)
+                this.results = res.data.results 
+                this.renderCharData(this.results, "total_user")
             }).catch(err => {
                 console.log("error")
             })
@@ -141,6 +145,7 @@
 
 @import '~@/assets/css/util.styl'
 .charts-wrapper
+    position relative
     width 100%
     padding 5rem 0
     background $deep2 
@@ -150,6 +155,25 @@
     &:before
         content ''
         display block
+        width 100%
+        position absolute
+        top -60px
+        left 0
+        height 0
+        padding-bottom 4%
         background-image url(https://dapp.review//assets/c9afe892.svg)
+        background-repeat no-repeat
+        background-size 100%
+    &:after
+        content ''
+        display block
+        position absolute
+        width 6rem
+        height 12rem
+        background-image url(https://dapp.review/assets/327a0296.svg)
+        top -8rem
+        z-index 55
+
+        
 
 </style>

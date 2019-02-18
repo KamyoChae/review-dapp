@@ -16,19 +16,19 @@
     <div class="dataItem">
         <div class="item-list">
             <div class="item">
-                <span class="data-num">2,192</span>
+                <span class="data-num">{{dapp}}</span>
                 <span class="data-dec">DAPP</span>
             </div> 
             <div class="item"> 
-                <span class="data-num">141,702</span>
+                <span class="data-num">{{user}}</span>
                 <span class="data-dec">日活</span>
             </div>
             <div class="item"> 
-                <span class="data-num">￥156,871,981</span>
+                <span class="data-num">￥{{volume_cny}}</span>
                 <span class="data-dec">24h 交易额</span>
             </div>
             <div class="item"> 
-                <span class="data-num">5,256</span>
+                <span class="data-num">{{contract}}</span>
                 <span class="data-dec">智能合约</span>
             </div>
         </div>
@@ -40,6 +40,61 @@
 
 <script>
 export default {
+    data(){
+        return {
+            result:[]
+        }
+    },
+    computed:{
+        contract(){ 
+            return  this.insertChar(this.result.total_contract)
+        },
+        dapp(){
+            return this.insertChar(this.result.total_dapp)
+        },
+        user(){
+            return this.insertChar(this.result.total_user)
+        },
+        volume_cny(){
+            let vol = Math.floor(this.result.total_volume_cny)
+            return this.insertChar(vol)
+        }
+    },
+    methods:{
+        getdata(){
+            this.axios.get('/api/dapp/total/stat/').then(res=>{
+                // console.log(res.data.result)
+                this.reder(res.data.result)
+            }).catch(err=>{
+
+            })
+        },
+        reder(arrlist){
+            this.result = arrlist
+        },
+        insertChar(num){
+            num += ''
+            let arr = num.split('')
+            let len = arr.length
+            let loop = 0
+            let index = null
+            if(len % 3 !== 0){
+                loop = Math.floor(len/3)
+            }else{
+                loop =  Math.floor(len/3) -1
+            } 
+            for(let i = 1; i <= loop; i++){
+                index = len - i * 3 
+                arr.splice(index, 0, ",")
+                
+            }
+            return arr.join('')
+
+        }
+    },
+    mounted(){
+        this.getdata()
+    }
 
 }
 </script>
@@ -137,7 +192,7 @@ export default {
             width 100%
             height 0
             left 0
-            top -30px
+            top -60px
             padding-bottom 4%
             background-image url(https://dapp.review/assets/6a64948b.svg) 
             background-size: 100%

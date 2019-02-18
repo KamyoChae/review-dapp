@@ -3,24 +3,14 @@
 
         <div class="imgbox">
             <div class="leftbox"> 
-                <a href="" target="_brank">
-                    <img src="https://media.dappreview.cn/images/DR---0x001/dsDeXF6HMyDkmpYZrJWsy4hB444WhhQM.png" alt="">
+                <a :href="leftbox.url" target="_brank">
+                    <img :src="leftbox.image" alt="">
                 </a>
             </div>
-            <div class="rightbox">
-                <a href="" target="_brank">
-                    <img src="https://media.dappreview.cn/images/DR---0x001/dsDeXF6HMyDkmpYZrJWsy4hB444WhhQM.png" alt="">
-                </a> 
-                <a href="" target="_brank">
-                    <img src="https://media.dappreview.cn/images/DR---0x001/dsDeXF6HMyDkmpYZrJWsy4hB444WhhQM.png" alt="">
-                </a> 
-                <a href="" target="_brank">
-                    <img src="https://media.dappreview.cn/images/DR---0x001/dsDeXF6HMyDkmpYZrJWsy4hB444WhhQM.png" alt="">
-                </a> 
-                <a href="" target="_brank">
-                    <img src="https://media.dappreview.cn/images/DR---0x001/dsDeXF6HMyDkmpYZrJWsy4hB444WhhQM.png" alt="">
-                </a> 
-
+            <div class="rightbox" >
+                <a :href="item.url" target="_brank" v-for='item in this.rightbox' :key="item.url">
+                    <img :src="item.image" alt="">
+                </a>   
             </div>
         </div>
     </div>
@@ -29,7 +19,29 @@
 
 <script>
 export default {
-
+    data(){
+        return { 
+            leftbox:[],
+            rightbox:[],
+        }
+    },
+    methods:{
+        getbanner(){
+            this.axios.get('/api/banner/banner/?type=2&lang=zh').then(res=>{  
+                this.swapbox(res.data.results)
+            }).catch(err=>{
+                console.log("err")
+            })
+        },
+        swapbox(arrList){
+            this.leftbox = arrList[0]
+            arrList.shift()
+            this.rightbox = arrList 
+        }
+    },
+    mounted(){
+        this.getbanner()
+    }
 }
 </script>
 
@@ -42,7 +54,7 @@ export default {
     width 100%
     height 24rem
     background $mainColor
-    font-size 0
+    font-size 0 
     .imgbox
         box-sizing border-box
         width 95%
@@ -50,12 +62,13 @@ export default {
         z-index 5
         margin auto 
         left 0
-        right 0
+        right 0  
         .leftbox, .rightbox  
             vertical-align top
             box-sizing border-box
             width 50%
-            display inline-block
+            height 0 
+            display inline-block  
             a
                 overflow hidden
                 margin .5%
@@ -69,7 +82,7 @@ export default {
         .rightbox  
             box-sizing border-box
             a
-                width 48%
+                width 47%
                 img 
                     width 100%
 </style>

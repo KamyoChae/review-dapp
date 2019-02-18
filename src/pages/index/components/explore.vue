@@ -36,13 +36,14 @@ export default {
         position absolute
         width 100%
         background-image url(https://dapp.review/assets/39c8c85f.svg)
-        top -20px
+        background-size 100%
+        top -30px
         height 0
         padding-bottom 2%
     .explore-left
         width  30%
         display inline-block
-        text-align left 
+        text-align left  
         h2
             font-size 2rem
             margin-bottom  1.5rem
@@ -60,9 +61,10 @@ export default {
             background $deep 
             border-radius 2rem
             margin-top 2.5rem
-            transition all .25s
+            transition all .25s 
             &:hover
                 background $deepHover
+                
     .explore-right
         width 30%
         display inline-block
