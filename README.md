@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # reviewdapp
 
 > A Vue.js project
@@ -19,3 +20,7 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+=======
+# review-dapp
+vue仿DAppReview官网
+>>>>>>> d6dc20f10be8221339cf850cdf814da173fc55fb
