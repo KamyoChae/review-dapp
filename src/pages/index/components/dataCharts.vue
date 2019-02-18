@@ -57,12 +57,13 @@
     },
     methods:{
         renderCharData(arrList){
+            arrList = arrList.reverse()
             let that = this
             let lastDate = null
             let newDate = null 
             let obj = {}
             let arr = []
-            arrList.forEach((element, index) => {
+            arrList.forEach((element, index, myarr) => {
                 // 根据时间戳获取当天日期
                 if(!newDate){ 
                     newDate = that.transformDate(element.timestamp)
@@ -87,12 +88,15 @@
                     console.log(newDate)
                 
                 if(lastDate !== newDate){
+                    
                     lastDate = newDate // 表示到了第二天
-                    console.log('第二天')
+                    console.log(index + "if")
                     // if(JSON.stringify(obj) !== '{}'){
                         // console.log(arr)
                         arr.push(obj)
                         obj = {}
+                        obj["日期"] = newDate
+                        obj[element.chain] = element.total_user
                     // }
                     // 创建新的对象
                 }else{
@@ -100,6 +104,10 @@
                     // console.log("同一天")
                     obj["日期"] = newDate
                     obj[element.chain] = element.total_user
+                    if(index === myarr.length-1){
+                        arr.push(obj)
+                        obj = {}
+                    } 
                 }
                 // 根据相同的日期创建对象
 
