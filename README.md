@@ -25,31 +25,20 @@ npm run dev
 ![](https://github.com/KamyoChae/review-dapp/blob/master/_demo_image/index_page_min.png)
 
 #
-### 首页
-![](https://github.com/KamyoChae/review-dapp/blob/master/_demo_image/index_1_static.JPG)
-
-#
-### 搜索
+### 首页点击搜索弹出搜索框 上面的几张图片有动画效果
 ![](https://github.com/KamyoChae/review-dapp/blob/master/_demo_image/index_1_search.JPG)
 
+ 
 #
-### 
-![](https://github.com/KamyoChae/review-dapp/blob/master/_demo_image/index_2.JPG)
-
-#
-###
-![](https://github.com/KamyoChae/review-dapp/blob/master/_demo_image/index_3.JPG)
-
-#
-###
+### 这张图标用了 v-charts 
 ![](https://github.com/KamyoChae/review-dapp/blob/master/_demo_image/index_4.JPG)
 
 #
-###
+### 切换到日活选项 动态生成图表
 ![](https://github.com/KamyoChae/review-dapp/blob/master/_demo_image/index_4_user.JPG)
 
 #
-###
+### 深度好文模块
 ![](https://github.com/KamyoChae/review-dapp/blob/master/_demo_image/index_5.JPG)
 
 #
@@ -59,10 +48,6 @@ npm run dev
 #### 这里改了官网的设计，用自己的思路实现了一个轮播组件，看上去比官网的舒服
 
 #
-###
-![](https://github.com/KamyoChae/review-dapp/blob/master/_demo_image/index_6.JPG)
-
-
-#
-###
+### 后面页脚就不多说了 没啥亮点
+![](https://github.com/KamyoChae/review-dapp/blob/master/_demo_image/index_6.JPG) 
 ![](https://github.com/KamyoChae/review-dapp/blob/master/_demo_image/index_7.JPG)
