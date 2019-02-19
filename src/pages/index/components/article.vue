@@ -110,15 +110,17 @@ export default {
             background #f3f7ff
             .list-show 
                 overflow hidden
+                position relative
                 font-size 0
                 width 100%
                 height 40rem
                 background #fefefe
                 box-sizing border-box
                 border-radius 1rem
-                box-shadow 0 90px 100px -25px rgba(50,50,80,.2), 0 50px 100px -37.5px rgba(0,0,0,.2)
-                a 
-                    display inline-block
+                box-shadow 0 90px 100px -25px rgba(50,50,80,.2), 0 50px 100px -37.5px rgba(0,0,0,.2) 
+                a  
+                    position absolute
+                    left 0
                     $all100()
                     .article
                         position relative
