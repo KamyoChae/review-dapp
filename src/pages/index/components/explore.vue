@@ -30,16 +30,6 @@ export default {
     padding 9rem 0
     background #fff
     text-align center
-    &:before
-        content ""
-        display block
-        position absolute
-        width 100%
-        background-image url(https://dapp.review/assets/39c8c85f.svg)
-        background-size 100%
-        top -30px
-        height 0
-        padding-bottom 2%
     .explore-left
         width  30%
         display inline-block
@@ -72,4 +62,5 @@ export default {
         margin-left 10%
         img 
             width 100%
+
 </style>

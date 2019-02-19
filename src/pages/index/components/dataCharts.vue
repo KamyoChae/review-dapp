@@ -1,5 +1,13 @@
 <template>
 <div class="charts-wrapper">
+    <div class="charts-bar">
+        <h2>数据一览</h2>
+        <div class="bar">
+            <span @click="getVolume" :class="voActive">交易额</span>
+            <span @click="getUser" :class="usActive">日活</span>
+            <span @click="getTx" :class="txActive">交易笔数</span>
+        </div>
+    </div>
     <div class="charts"> 
         <ve-line :data="chartData" :colors="colors"  :extend="extend" :settings="chartSettings"></ve-line>
     </div>
@@ -46,6 +54,11 @@
                 rows: []
             },
             results:[],
+            classActive:['usActive', 'voActive', 'txActive'],
+            usActive: "",
+            voActive: "",
+            txActive: "",
+
         }
     },
     methods:{
@@ -117,15 +130,27 @@
         getUser(){
             // 日活
             this.renderCharData(this.results, "total_user")
+            this.filterClass("usActive")
         },
         getTx(){
             // 交易笔数
             this.renderCharData(this.results, "total_tx")
+            this.filterClass("txActive")
         },
         getVolume(){
             // 交易额
             this.renderCharData(this.results, "total_volume_CNY")
-            
+            this.filterClass("voActive")
+        },
+        filterClass(str){ 
+            let arr = this.classActive
+            arr.forEach(el=>{ 
+                if(el == str){ 
+                    this[el] = 'active' 
+                }else{ 
+                    this[el] = ''
+                } 
+            }) 
         }
     },
     created() { 
@@ -151,19 +176,7 @@
     background $deep2 
     .charts
         width 85% 
-        margin auto  
-    &:before
-        content ''
-        display block
-        width 100%
-        position absolute
-        top -60px
-        left 0
-        height 0
-        padding-bottom 4%
-        background-image url(https://dapp.review//assets/c9afe892.svg)
-        background-repeat no-repeat
-        background-size 100%
+        margin auto   
     &:after
         content ''
         display block
@@ -173,6 +186,41 @@
         background-image url(https://dapp.review/assets/327a0296.svg)
         top -8rem
         z-index 55
+    .charts-bar
+        width 14rem
+        height 5rem
+        margin 0 auto 3rem auto
+        color #fff 
+        text-align center 
+        font-size 0
+        h2 
+            cursor pointer
+            font-size 2rem
+            margin 2rem 0
+        .bar 
+            height 40px
+            line-height 40px 
+            border-bottom 1px solid rgba(255,255,255,.5)
+            span 
+                cursor pointer
+                color rgba(255,255,255,.5)
+                display inline-block
+                height 40px
+                padding 0 .8rem
+                font-size 1rem 
+            .active
+                color #fff
+                border-bottom 1px solid rgba(255,255,255,1)
+        &:after
+            width 0
+            height 0
+            border 5rem solid #ffdd5c
+            position absolute
+            bottom 0
+            right 0
+            z-index 999
+
+
 
         
 

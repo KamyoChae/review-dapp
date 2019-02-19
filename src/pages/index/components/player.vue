@@ -1,16 +1,19 @@
 <template>
-<div class="explore-wrapper"> 
+<div class="player-wrapper"> 
+    <div class="player-box">
 
-    <div class="explore-left"> 
-        <img src="https://media.dappreview.cn/images/kaeyleo/rw8W35arRKFFfpf4Pdk84SShPiJ4imCc.svg " alt="">
-    </div>
+        <div class="player-left"> 
+            <img src="https://media.dappreview.cn/images/kaeyleo/rw8W35arRKFFfpf4Pdk84SShPiJ4imCc.svg " alt="">
+        </div>
 
-    <div class="explore-right">
-        <h2>玩家数据，一目了然</h2>
-        <p>  
-            聚合EOS、TRON、ETH三大平台用户数据，帮你清楚地计算Dapp消费账单，同时还可以围观氪金大佬动态，紧跟步伐。 
-        </p>
-        <a href="">查看数据</a>
+        <div class="player-right">
+            <h2>玩家数据，一目了然</h2>
+            <p>  
+                聚合EOS、TRON、ETH三大平台用户数据，帮你清楚地计算Dapp消费账单，同时还可以围观氪金大佬动态，紧跟步伐。 
+            </p>
+            <a href="">查看数据</a>
+        </div>
+
     </div>
 
     <div class="dataItem">
@@ -102,12 +105,27 @@ export default {
 <style lang='stylus' scoped>
 
 @import '~@/assets/css/util.styl'
-.explore-wrapper
+.player-wrapper
     width 100%
     padding 9rem 0 0 0
     background #F3F7FF
     text-align center
-    .explore-right
+    .player-box
+        position relative
+        padding-bottom 5rem
+        &:after
+            content ""
+            display block
+            position absolute
+            width 100%
+            height 0
+            left 0
+            bottom 0
+            padding-bottom 4%
+            background-image url(https://dapp.review/assets/6a64948b.svg) 
+            background-size: 100%
+            background-repeat no-repeat
+    .player-right
         width  30%
         display inline-block
         text-align left  
@@ -132,7 +150,7 @@ export default {
             transition all .25s
             &:hover
                 background $deepHover
-    .explore-left
+    .player-left
         width 40%
         display inline-block
         margin-right 5%
@@ -145,7 +163,7 @@ export default {
         height 19rem 
         background #fff
         text-align center
-        margin-top 5rem 
+        margin-top 0
         .item-list
             position absolute
             top 0
@@ -184,18 +202,16 @@ export default {
         .item:nth-of-type(3):before
             background #7E67FF
         .item:nth-of-type(4):before
-            background #FFD54F
-        &:before
+            background #FFD54F 
+        &:after
             content ""
             display block
             position absolute
             width 100%
+            background-image url(https://dapp.review/assets/c9afe892.svg)
+            background-size 100%
+            bottom -2px
             height 0
-            left 0
-            top -60px
             padding-bottom 4%
-            background-image url(https://dapp.review/assets/6a64948b.svg) 
-            background-size: 100%
-            background-repeat no-repeat
 
 </style>

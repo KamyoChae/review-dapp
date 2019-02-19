@@ -85,4 +85,16 @@ export default {
                 width 47%
                 img 
                     width 100%
+    
+    &:before
+        content ""
+        display block
+        position absolute
+        width 100%
+        background-image url(https://dapp.review/assets/39c8c85f.svg)
+        background-size 100%
+        bottom 0
+        height 0
+        left 0
+        padding-bottom 2%
 </style>
