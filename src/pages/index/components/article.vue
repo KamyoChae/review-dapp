@@ -28,6 +28,13 @@
                  
             </transition-group> 
             
+
+
+            <div class="code">
+                <img src="https://dapp.review/assets/8ec37623.svg" alt="扫码获取更多">
+                <p>扫码获取更多</p>
+            </div>
+
         </div>
 
         
@@ -39,6 +46,8 @@
         @mouseleave="go"
         ></span>
     </div>
+
+
 </div>
 
 </template>
@@ -107,17 +116,30 @@ export default {
         .article-list
             position relative
             padding 5rem 12rem
-            background #f3f7ff
+            background #f3f7ff 
             .list-show 
                 overflow hidden
                 position relative
                 font-size 0
                 width 100%
                 height 40rem
-                background #fefefe
+                background #fefefe  
                 box-sizing border-box
                 border-radius 1rem
                 box-shadow 0 90px 100px -25px rgba(50,50,80,.2), 0 50px 100px -37.5px rgba(0,0,0,.2) 
+                &:before
+                    position absolute
+                    content ''
+                    width 20rem
+                    height 20rem 
+                    top 0
+                    bottom 0
+                    left 0
+                    right 0
+                    margin auto 
+                    background url(https://dapp.review/logo.svg) no-repeat
+                    background-size 100% 
+                    opacity .5
                 a  
                     position absolute
                     left 0
@@ -254,4 +276,19 @@ export default {
             background #eee
         .active
             background #1f232f
+
+
+    .code
+        padding 10rem  5rem
+        color $deep2
+        width 14rem 
+        height 14rem 
+        margin auto
+        img 
+            width 100%
+            height 100% 
+        p 
+            font-size 2rem
+            line-height 8rem  
+
 </style>
