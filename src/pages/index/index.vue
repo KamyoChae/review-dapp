@@ -6,6 +6,8 @@
     <player />
     <dataCharts />
     <myarticle />
+    <concat />
+    <myfoot />
 </div>
 
 </template>
@@ -17,6 +19,8 @@ import explore from './components/explore'
 import player from './components/player'
 import dataCharts from './components/dataCharts'
 import myarticle from './components/article'
+import concat from './components/concat'
+import myfoot from './components/foot'
 export default {
     components:{
         myHerder,
@@ -25,6 +29,8 @@ export default {
         player,
         dataCharts,
         myarticle,
+        concat,
+        myfoot,
     }
 
 }
