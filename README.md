@@ -20,7 +20,9 @@ npm run dev
 
 # 下面是vue重构的页面，力求还原官网设计
 
-# 
+# 先放上重构结束的项目截图
+
+![](https://github.com/KamyoChae/review-dapp/blob/master/_demo_image/index_page_min.png)
 
 #
 ### 首页
