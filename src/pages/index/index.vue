@@ -5,6 +5,7 @@
     <explore />
     <player />
     <dataCharts />
+    <myarticle />
 </div>
 
 </template>
@@ -15,6 +16,7 @@ import banner from './components/banner'
 import explore from './components/explore'
 import player from './components/player'
 import dataCharts from './components/dataCharts'
+import myarticle from './components/article'
 export default {
     components:{
         myHerder,
@@ -22,6 +24,7 @@ export default {
         explore,
         player,
         dataCharts,
+        myarticle,
     }
 
 }

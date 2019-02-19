@@ -177,7 +177,7 @@
     .charts
         width 85% 
         margin auto   
-    &:after
+    &:before
         content ''
         display block
         position absolute
@@ -186,6 +186,16 @@
         background-image url(https://dapp.review/assets/327a0296.svg)
         top -8rem
         z-index 55
+    &:after
+        content '' 
+        width 0
+        height 0
+        border 5rem solid transparent
+        border-right-color #ffdd5c
+        position absolute
+        bottom -2rem
+        right 0
+        z-index 999 
     .charts-bar
         width 14rem
         height 5rem
@@ -211,14 +221,7 @@
             .active
                 color #fff
                 border-bottom 1px solid rgba(255,255,255,1)
-        &:after
-            width 0
-            height 0
-            border 5rem solid #ffdd5c
-            position absolute
-            bottom 0
-            right 0
-            z-index 999
+    
 
 
 

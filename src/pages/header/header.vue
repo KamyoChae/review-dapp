@@ -3,7 +3,7 @@
 <div class="header-wrapper">
     <div class="header-left">
 
-        <img src="../../assets/images/white.png" alt="">
+        <img src="https://dapp.review/white-logo.svg" alt="">
         <div class="link">
 
             <router-link tag="span" to="/">首页</router-link>
@@ -64,7 +64,7 @@ export default {
         width 50%
         display inline-block
         img 
-            height 2.5rem
+            height 2rem
         .link
             display inline-block
             width 80%

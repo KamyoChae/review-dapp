@@ -6,12 +6,34 @@ $deep2 = #201f3f
 $lineblue = #00a1ff
 $lineyellow = #ffd444
 $linegreen = #40c96c
+$logoGreen = #00d38c
 $root = 15px
 $radius = .2rem
 
+$all100(){
+  width: 100%
+  height: 100%
+}
 
 
 
+.list-enter {
+  transform: translateY(100%)
+}
+.list-enter-to { 
+  transform: translateY(-100%);
+}
+
+.list-leave {
+  transform: translateY(-100%)
+}
+
+.list-leave-to {
+  transform: translateY(-200%)
+}
+.list-leave-active, .list-enter-active {
+  transition: all 1s ease; 
+}
 
 
 

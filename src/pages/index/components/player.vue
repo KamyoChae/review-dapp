@@ -120,7 +120,7 @@ export default {
             width 100%
             height 0
             left 0
-            bottom 0
+            bottom -4px
             padding-bottom 4%
             background-image url(https://dapp.review/assets/6a64948b.svg) 
             background-size: 100%
