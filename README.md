@@ -20,10 +20,7 @@ npm run dev
 
 # 下面是vue重构的页面，力求还原官网设计
 
-<iframe width="560" height="315" src="http://tv.sohu.com/upload/static/share/share_play.html#90268916_9365222_0_9001_0" frameborder="0" allowfullscreen></iframe>
- 
-
-<video controls="controls" src="http://farbox-video.qiniudn.com/min-farbox.mp4" width="100%"></video>
+[![asciicast](https://asciinema.org/a/42383.png)](https://github.com/KamyoChae/review-dapp/blob/master/_demo_image/DAppReview.mp4)
 
 # 先放上重构结束的项目截图
 
