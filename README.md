@@ -20,7 +20,7 @@ npm run dev
 
 # 下面是vue重构的页面，力求还原官网设计
 
-[![asciicast](https://asciinema.org/a/42383.png)](https://github.com/KamyoChae/review-dapp/blob/master/_demo_image/DAppReview.mp4)
+[下载demo视频](https://asciinema.org/a/42383.png)](https://github.com/KamyoChae/review-dapp/blob/master/_demo_image/DAppReview.mp4)
 
 # 先放上重构结束的项目截图
 
