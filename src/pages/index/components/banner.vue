@@ -39,7 +39,7 @@ export default {
             this.rightbox = arrList 
         }
     },
-    mounted(){
+    created(){
         this.getbanner()
     }
 }
