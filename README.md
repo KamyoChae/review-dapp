@@ -24,8 +24,7 @@ npm run dev
 ![](https://github.com/KamyoChae/review-dapp/blob/master/_demo_image/deep2.JPG)
 
 ## 重构之后的样子：
-![](https://github.com/KamyoChae/review-dapp/blob/master/_demo_image/slider1.gif)
-![](https://github.com/KamyoChae/review-dapp/blob/master/_demo_image/index_5_slider.JPG)
+![](https://github.com/KamyoChae/review-dapp/blob/master/_demo_image/slider1.gif) 
 
 # 下面是vue重构的页面，力求还原官网设计
 
