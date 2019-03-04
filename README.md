@@ -18,14 +18,13 @@ npm run dev
  
 # [整理的接口文档](https://github.com/KamyoChae/review-dapp/blob/master/api.md)
 
-## 重构的部分
-
-### 官网的样子：
+## 重构的部分 官网的样子：
 
 ![](https://github.com/KamyoChae/review-dapp/blob/master/_demo_image/deep1.JPG)
 ![](https://github.com/KamyoChae/review-dapp/blob/master/_demo_image/deep2.JPG)
 
-### 重构之后的样子：
+## 重构之后的样子：
+![](https://github.com/KamyoChae/review-dapp/blob/master/_demo_image/slider.gif)
 ![](https://github.com/KamyoChae/review-dapp/blob/master/_demo_image/index_5_slider.JPG)
 
 # 下面是vue重构的页面，力求还原官网设计
