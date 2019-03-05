@@ -1,5 +1,5 @@
 <template>
-    <div class="banner-wrapper">
+    <div class="banner-wrapper" >
 
         <div class="imgbox">
             <div class="leftbox"> 
@@ -13,11 +13,16 @@
                 </a>   
             </div>
         </div>
+
+        <div class="canvas">
+            <canvas ref="mcanvas" ></canvas>
+        </div>
     </div>
 
 </template>
 
 <script>
+import warter from '@/util/util'
 export default {
     data(){
         return { 
@@ -37,11 +42,20 @@ export default {
             this.leftbox = arrList[0]
             arrList.shift()
             this.rightbox = arrList 
+        },
+        initCanvas(){  
+            warter(this.$refs.mcanvas, "#fff", 50 ) 
         }
     },
     created(){
         this.getbanner()
+
+    },
+    mounted(){
+
+        this.initCanvas()
     }
+
 }
 </script>
 
@@ -85,16 +99,11 @@ export default {
                 width 47%
                 img 
                     width 100%
-    
-    &:before
-        content ""
-        display block
-        position absolute
+ 
+    .canvas
         width 100%
-        background-image url(https://dapp.review/assets/39c8c85f.svg)
-        background-size 100%
-        bottom 0
-        height 0
-        left 0
-        padding-bottom 2%
+        height 100px
+        position absolute
+        bottom 0 
+        transform rotateZ(180deg)
 </style>

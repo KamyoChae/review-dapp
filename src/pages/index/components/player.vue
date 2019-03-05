@@ -14,6 +14,10 @@
             <a href="">查看数据</a>
         </div>
 
+        <div class="canvas">
+            <canvas ref="playerCanvas" ></canvas>
+        </div>
+
     </div>
 
     <div class="dataItem">
@@ -35,13 +39,16 @@
                 <span class="data-dec">智能合约</span>
             </div>
         </div>
-
+        <div class="canvas">
+            <canvas ref="dataCanvas" ></canvas>
+        </div>
     </div>
 </div>
 
 </template>
 
 <script>
+import warter from '@/util/util'
 export default {
     data(){
         return {
@@ -97,6 +104,10 @@ export default {
     },
     created(){
         this.getdata()
+    },
+    mounted(){
+        warter(this.$refs.playerCanvas, "#fff", 15) 
+        warter(this.$refs.dataCanvas, "#201f3f", 15)
     }
 
 }
@@ -113,18 +124,13 @@ export default {
     .player-box
         position relative
         padding-bottom 5rem
-        &:after
-            content ""
-            display block
-            position absolute
+  
+        .canvas
             width 100%
-            height 0
-            left 0
-            bottom -4px
-            padding-bottom 4%
-            background-image url(https://dapp.review/assets/6a64948b.svg) 
-            background-size: 100%
-            background-repeat no-repeat
+            height 100px
+            position absolute
+            bottom 0 
+            transform rotateZ(180deg)
     .player-right
         width  30%
         display inline-block
@@ -203,15 +209,11 @@ export default {
             background #7E67FF
         .item:nth-of-type(4):before
             background #FFD54F 
-        &:after
-            content ""
-            display block
-            position absolute
+        .canvas
             width 100%
-            background-image url(https://dapp.review/assets/c9afe892.svg)
-            background-size 100%
-            bottom -2px
-            height 0
-            padding-bottom 4%
+            height 100px
+            position absolute
+            bottom 0 
+            transform rotateZ(180deg)
 
 </style>
