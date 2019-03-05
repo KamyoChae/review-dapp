@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import warter from '@/util/util'
+import water from '@/util/util'
 export default {
     data(){
         return {
@@ -106,8 +106,8 @@ export default {
         this.getdata()
     },
     mounted(){
-        warter(this.$refs.playerCanvas, "#fff", 15) 
-        warter(this.$refs.dataCanvas, "#201f3f", 15)
+        water(this.$refs.playerCanvas, "#fff", 15) 
+        water(this.$refs.dataCanvas, "#201f3f", 15)
     }
 
 }

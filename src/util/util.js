@@ -1,4 +1,4 @@
-export default function warter (dom, color, amplitude){
+export default function water (dom, color, amplitude){
     let width =  document.body.clientWidth 
     let height = "400"
     let banCanvas = dom

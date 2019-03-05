@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import warter from '@/util/util'
+import water from '@/util/util'
 export default {
     data(){
         return { 
@@ -44,7 +44,7 @@ export default {
             this.rightbox = arrList 
         },
         initCanvas(){  
-            warter(this.$refs.mcanvas, "#fff", 50 ) 
+            water(this.$refs.mcanvas, "#fff", 50 ) 
         }
     },
     created(){

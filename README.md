@@ -18,6 +18,8 @@ npm run dev
  
 # [整理的接口文档](https://github.com/KamyoChae/review-dapp/blob/master/api.md)
 
+# 2019-03-05更新 优化首页水波纹动效 查看无数据版
+
 ## 重构的部分 官网的样子：
 
 ![](https://github.com/KamyoChae/review-dapp/blob/master/_demo_image/deep1.JPG)
@@ -26,7 +28,7 @@ npm run dev
 ## 重构之后的样子：
 ![](https://github.com/KamyoChae/review-dapp/blob/master/_demo_image/slider1.gif) 
 
-# 下面是vue重构的页面，力求还原官网设计
+# 下面是vue重构的页面，力求还原官网设计 
 
 [下载demo视频](https://github.com/KamyoChae/review-dapp/blob/master/_demo_image/DAppReview.mp4)
 
