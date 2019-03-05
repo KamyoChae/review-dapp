@@ -2,6 +2,8 @@
 # review-dapp
 vue仿DAppReview官网的一个练手项目
 
+# 查看在线[效果](https://kamyochae.github.io/review-dapp-noapi/)
+
 ## 食用方法
 
 ### 第一步 ：添加作料
@@ -18,7 +20,7 @@ npm run dev
  
 # [整理的接口文档](https://github.com/KamyoChae/review-dapp/blob/master/api.md)
 
-# 2019-03-05更新 优化首页水波纹动效 查看无数据版
+# 2019-03-05更新 优化首页水波纹动效 这个版本是用来接口的，无接口版本点[这里](https://github.com/KamyoChae/review-dapp-noapi)
 
 ## 重构的部分 官网的样子：
 
