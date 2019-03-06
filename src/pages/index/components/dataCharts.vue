@@ -62,36 +62,23 @@
         }
     },
     methods:{
-        renderCharData(arrList, type){
-            arrList = arrList.reverse()
+        renderCharData(arrList, type){ 
+            arrList = arrList.reverse()  
             let that = this
-            let lastDate = null
-            let newDate = null 
             let obj = {}
             let arr = []
+            let newDate = null, lastDate = null 
             arrList.forEach((element, index, myarr) => {
-                // 根据时间戳获取当天日期
-                if(!newDate){ 
-                    newDate = that.transformDate(element.timestamp)
+                // 根据时间戳获取当天日期 
+                if(!newDate){
+                    newDate = that.transformDate(element.timestamp)  
                     lastDate = newDate 
+                }else{
+                    newDate = that.transformDate(element.timestamp)
                 }
-                if(index % 3 === 0 && index !== 0){
-                    let day = newDate.split('-')[1] - 0 + 1
-                    
-                    let month = newDate.split('-')[0] 
-                    if(day === 32){
-                        day = 1
-                        month ++
-                        if(month === 13){
-                            month = 1
-                        }
-                    }
-                    newDate = month + '-' + day
-                }
-                // 猜测是接口时间戳出了问题，遍历时间戳转换成日期全部都是第一天。
-                // 所以下面采用另外一种方式解决
-                 
                 
+                
+        
                 if(lastDate !== newDate){
                     
                     lastDate = newDate // 表示到了第二天 
@@ -113,6 +100,7 @@
                         obj = {}
                     } 
                 }
+                
                 // 根据相同的日期创建对象
 
                 // 将创建好的对象放到数组里面
@@ -120,11 +108,14 @@
             }); 
             this.chartData.rows=arr  
         },
-        transformDate(timeStamp){
-            let date = new Date(timeStamp)
-            let month = date.getMonth()+1
-            let day = date.getDate()
-            return month + '-' + day
+        
+        transformDate(time){ 
+            // let time = element.timestamp 
+            let d = new Date(time * 1000)  
+            let M = (d.getMonth()+1 < 10 ? '0'+(d.getMonth()+1) : d.getMonth()+1)
+            let D = d.getDate() + ' ' 
+            // newDate = M + "-" + D
+            return M + "-" + D
         },
 
         getUser(){

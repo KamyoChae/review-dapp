@@ -64,7 +64,7 @@ export default {
     methods: { 
         getArticle(){
             this.axios.get('/api/blog/article/groups/?show_in_index=1&language=1').then(res=>{
-                console.log(res)
+                // console.log(res)
                 let articles = res.data.results[0].articles
                 articles.forEach(element => {
                     element.url = 'https://dapp.review/article/' + element.id
